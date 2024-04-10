@@ -18,7 +18,7 @@ function [map] = do_map(algo, CSM, axf, X, Z, h, varargin)
 %       1 : no display 
 
 %%
-
+tic;
 p = inputParser;
 
 addRequired(p,'algo');
@@ -157,5 +157,6 @@ end
       
 map = real(map);
 %End of function
+toc
 end
         

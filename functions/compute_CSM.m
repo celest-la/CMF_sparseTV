@@ -73,17 +73,17 @@ nBin = p.Results.nBin;
     Tsnaps = nw/fs; 
     if Tsnaps*f <= 20
         if p.Results.doDisp == "on"
-            warning(['Tsnaps (' num2str(Tsnaps) ') est peut-être trop court pour avoir une bonne reconstruction. Il y a moins de 20 périodes dans un snapshots. Choisir K plus petit, ou overlap plus grand.']);
+            warning(['Tsnaps (' num2str(Tsnaps) ') is maybe to short for a good reconstruction (less than 20 periods in the snap). Please select a smaller K or bigger overlap.']);
         end
     end
     if p.Results.doDisp == "on"
-        disp([' Tsnaps = ' num2str(Tsnaps*1e3) ' ms soit ' num2str(Tsnaps*f) ' périodes.'])
+        disp([' Tsnaps = ' num2str(Tsnaps*1e3) ' ms leading to ' num2str(Tsnaps*f) ' periods.'])
     end
     
     %==========
     % Check if Shannon is respected
     if fs < 2*f % Shannon's condition
-        error("fs < 2f : La condition de Shannon n'est pas respectée.")
+        error("fs < 2f : Shannon criteria is not respected.")
     end
 
     %==========
